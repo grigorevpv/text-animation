@@ -18,6 +18,7 @@
 		.logo {
 			color: white;
 		}
+
 		.menu {
 			padding: 0;
 			margin: 0;
@@ -25,9 +26,11 @@
 			display: flex;
 			justify-content: center;
 		}
+
 		.menu__item {
 			flex-grow: 1;
 		}
+
 		.button {
 			  background: tomato;
 			  padding: 5px;
@@ -39,11 +42,14 @@
 			  font-weight: bold;
 			  font-size: 2em;
 			  text-align: center;
+			  transition: all 2.5s ease;
 		}
 
 		.text-animation {
-			position: absolute;
-			transform: translateX(-50%) translateY(-50%)
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
 		}
 
 		.text-animation li {
@@ -70,6 +76,10 @@
 		.text-animation.hidden li:nth-child(3) { transform: translateX(-200px) translateY(-200px); }
 		.text-animation.hidden li:nth-child(4) { opacity: 0; }
 
+		.menu.hidden li:nth-child(1) { opacity: 0; }
+		.menu.hidden li:nth-child(2) { opacity: 0; }
+		.menu.hidden li:nth-child(3) { opacity: 0; }
+
 	</style>
 </head>
 <body class="page page_theme_black">
@@ -81,19 +91,20 @@
 		  <li>4</li>
 		</ul>
 	</div>
-<!--     <ul class="menu">
+    <ul class="menu hidden">
       <li class="button">1</li>
       <li class="button">2</li>
       <li class="button">3</li>
-      <li class="button">4</li>
-      <li class="button">5</li>
-    </ul> -->
+    </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     	$(function() {
     		setTimeout(function() {
     			$('.text-animation').removeClass('hidden');
     		}, 500);
+    		setTimeout(function() {
+    			$('.menu').removeClass('hidden');
+    		}, 2000);
     	});
     </script>
 </body>
