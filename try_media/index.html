@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<title>Media</title>
+	<style type="text/css">
+		.page {
+		}
+		.page_theme_black {
+			background-color: black;
+		}
+		.page_center {
+			margin: 20% 0 auto;
+			display: flex;
+		    justify-content: center;
+		}
+		.logo {
+			color: white;
+		}
+		.menu {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+		}
+		.menu__item {
+			flex-grow: 1;
+		}
+		.button {
+			  background: tomato;
+			  padding: 5px;
+			  width: 60px;
+			  height: 50px;
+			  margin: 5px;
+			  line-height: 50px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 2em;
+			  text-align: center;
+		}
+
+		.text-animation {
+			position: absolute;
+			transform: translateX(-50%) translateY(-50%)
+		}
+
+		.text-animation li {
+			display: inline-block;
+			color: white;
+			transition: all 2.5s ease;
+		}
+
+		.text-animation li:last-child {
+			margin-right: 0;
+		}
+
+		.text-animation.hidden {
+			opacity: 0;
+		}
+
+		.text-animation.hidden li:nth-child(1) { transform: translateX(-200px) translateY(-200px);}
+	</style>
+</head>
+<body class="page page_theme_black">
+	<div class="page_center">
+		<ul class="text-animation hidden">
+		  <li>C</li>
+		  <li>E</li>
+		  <li>H</li>
+		  <li>4</li>
+		</ul>
+	</div>
+    <ul class="menu">
+      <li class="button">1</li>
+      <li class="button">2</li>
+      <li class="button">3</li>
+      <li class="button">4</li>
+      <li class="button">5</li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+    		setTimeout(function() {
+    			$('.text-animation').removeClass('hidden');
+    		}, 500);
+    	});
+    </script>
+</body>
+</html>
